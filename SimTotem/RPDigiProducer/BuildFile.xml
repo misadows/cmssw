@@ -14,6 +14,5 @@
 <use   name="boost"/>
 <use   name="geant4"/>
 <use   name="DataFormats/TotemRPDetId"/>
-<use   name="TotemCondFormats/DAQInformation"/>
-<use   name="TotemCondFormats/DataRecord"/>
+<use   name="CondFormats/TotemReadoutObjects"/>
 <flags   EDM_PLUGIN="1"/>

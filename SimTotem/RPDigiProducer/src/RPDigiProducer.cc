@@ -28,8 +28,8 @@
 #include "FWCore/Utilities/interface/RandomNumberGenerator.h"
 #include "FWCore/Utilities/interface/Exception.h"
 #include "CLHEP/Random/RandomEngine.h"
-#include "TotemCondFormats/DAQInformation/interface/AnalysisMask.h"
-#include "TotemCondFormats/DataRecord/interface/TotemDAQMappingRecord.h"
+#include "CondFormats/TotemReadoutObjects/interface/TotemAnalysisMask.h"
+#include "CondFormats/TotemReadoutObjects/interface/TotemDAQMapping.h"
 
 RPDigiProducer::RPDigiProducer(const edm::ParameterSet& conf) :
 	conf_(conf) {
