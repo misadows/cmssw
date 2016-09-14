@@ -1,7 +1,7 @@
 #include "SimTotem/RPDigiProducer/interface/DeadChannelsManager.h"
-#include "TotemCondFormats/DAQInformation/interface/TotemSymbId.h"
-#include "TotemCondFormats/DAQInformation/interface/DAQMapping.h"
-#include "DataFormats/TotemRPDetId/interface/TotRPDetId.h"
+#include "CondFormats/TotemReadoutObjects/interface/TotemSymbId.h"
+#include "CondFormats/TotemReadoutObjects/interface/DAQMapping.h"
+#include "DataFormats/TotemRPDetId/interface/TotemRPDetId.h"
 #include <map>
 
 DeadChannelsManager::DeadChannelsManager() {
