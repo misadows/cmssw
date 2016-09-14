@@ -1,5 +1,5 @@
 #include "SimTotem/RPDigiProducer/interface/RPLinearChargeDivider.h"
-#include "Geometry/TotemRPDetTopology/interface/RPHepPDTWrapper.h"
+#include "Geometry/VeryForwardRPTopology/interface/RPHepPDTWrapper.h"
 #include "DataFormats/GeometryVector/interface/LocalPoint.h"
 #include "DataFormats/GeometryVector/interface/LocalVector.h"
 #include "Geometry/VeryForwardRPTopology/interface/RPTopology.h"
