@@ -1,5 +1,5 @@
 #include "SimTotem/RPDigiProducer/interface/RPVFATSimulator.h"
-#include "Geometry/TotemRPDetTopology/interface/RPTopology.h"
+#include "Geometry/VeryForwardRPTopology/interface/RPTopology.h"
 #include <vector>
 #include "TRandom.h"
 #include <iostream>
