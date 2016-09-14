@@ -1,6 +1,6 @@
 #include "FWCore/ParameterSet/interface/ParameterSet.h"
 #include "SimDataFormats/TrackingHit/interface/PSimHit.h"
-#include "DataFormats/TotemRPDetId/interface/TotRPDetId.h"
+#include "DataFormats/TotemRPDetId/interface/TotemRPDetId.h"
 #include "FWCore/Framework/interface/EventSetup.h"
 #include "FWCore/Framework/interface/ESHandle.h"
 #include "Geometry/TotemRecords/interface/MisalignedGeometryRecord.h"
@@ -28,7 +28,7 @@ RPDisplacementGenerator::RPDisplacementGenerator(const edm::ParameterSet &ps, RP
   catch (...) {
   }
 
-  unsigned int decId = TotRPDetId::RawToDecId(detId);
+  unsigned int decId = TotemRPDetId::rawToDecId(detId);
 
   DDTranslation S_m;        // zero translation by default
   DDRotationMatrix R_m;     // identity rotation by default

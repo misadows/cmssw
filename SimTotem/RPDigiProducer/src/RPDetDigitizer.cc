@@ -3,7 +3,7 @@
 
 #include "FWCore/ParameterSet/interface/ParameterSet.h"
 #include "SimTotem/RPDigiProducer/interface/RPDetDigitizer.h"
-#include "Geometry/TotemRPDetTopology/interface/RPTopology.h"
+#include "Geometry/VeryForwardRPTopology/interface/RPTopology.h"
 
 
 RPDetDigitizer::RPDetDigitizer(const edm::ParameterSet &params, CLHEP::HepRandomEngine& eng, RPDetId det_id, const edm::EventSetup& iSetup)

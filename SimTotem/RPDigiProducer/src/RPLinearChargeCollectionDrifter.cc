@@ -1,5 +1,5 @@
 #include "SimTotem/RPDigiProducer/interface/RPLinearChargeCollectionDrifter.h"
-#include "Geometry/TotemRPDetTopology/interface/RPTopology.h"
+#include "Geometry/VeryForwardRPTopology/interface/RPTopology.h"
 #include <iostream>
 #include <vector>
 
