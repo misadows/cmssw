@@ -3,8 +3,8 @@
 #include "DataFormats/TotemRPDetId/interface/TotemRPDetId.h"
 #include "FWCore/Framework/interface/EventSetup.h"
 #include "FWCore/Framework/interface/ESHandle.h"
-#include "Geometry/TotemRecords/interface/MisalignedGeometryRecord.h"
-#include "Geometry/TotemRecords/interface/RealGeometryRecord.h"
+#include "Geometry/Records/interface/VeryForwardMisalignedGeometryRecord.h"
+#include "Geometry/Records/interface/VeryForwardRealGeometryRecord.h"
 #include "Geometry/TotemRPGeometryBuilder/interface/TotemRPGeometry.h"
 #include "TotemAlignment/RPDataFormats/interface/RPAlignmentCorrections.h"
 
@@ -23,7 +23,7 @@ RPDisplacementGenerator::RPDisplacementGenerator(const edm::ParameterSet &ps, RP
   // read the alignment correction
   ESHandle<RPAlignmentCorrections> alignments;
   try {
-    iSetup.get<MisalignedGeometryRecord>().get(alignments);
+    iSetup.get<VeryForwardMisalignedGeometryRecord>().get(alignments);
   }
   catch (...) {
   }
