@@ -416,9 +416,9 @@ void TotemRPGeometryESModule::ApplyAlignments(const edm::ESHandle<DDCompactView>
 
 std::unique_ptr<DDCompactView> TotemRPGeometryESModule::produceMeasuredDDCV(const VeryForwardMeasuredGeometryRecord &iRecord)
 {
-  // get the ideal DDCompactView from EventSetup
-  edm::ESHandle<DDCompactView> idealCV;
-  iRecord.getRecord<IdealGeometryRecord>().get("XMLIdealGeometryESSource_CTPPS", idealCV);
+    // get the ideal DDCompactView from EventSetup
+    edm::ESHandle<DDCompactView> idealCV;
+    iRecord.getRecord<IdealGeometryRecord>().get(idealCV);
 
   // load alignments
   edm::ESHandle<RPAlignmentCorrectionsData> alignments;
