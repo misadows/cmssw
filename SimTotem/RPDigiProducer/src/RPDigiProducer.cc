@@ -29,7 +29,7 @@
 #include "FWCore/Utilities/interface/Exception.h"
 #include "CLHEP/Random/RandomEngine.h"
 #include "CondFormats/TotemReadoutObjects/interface/TotemAnalysisMask.h"
-#include "CondFormats/TotemReadoutObjects/interface/TotemDAQMapping.h"
+#include "CondFormats/DataRecord/interface/TotemDAQMappingRecord.h"
 
 RPDigiProducer::RPDigiProducer(const edm::ParameterSet& conf) :
 	conf_(conf) {
@@ -216,7 +216,7 @@ void RPDigiProducer::produce(edm::Event& iEvent, const edm::EventSetup& iSetup) 
 void RPDigiProducer::beginRun(edm::Run&, edm::EventSetup const& es){
 	// get analysis mask to mask channels
 	if (simulateDeadChannels) {
-		edm::ESHandle<AnalysisMask> analysisMask;
+		edm::ESHandle<TotemAnalysisMask> analysisMask;
 		es.get<TotemDAQMappingRecord> ().get(analysisMask);
 		deadChannelsManager = DeadChannelsManager(analysisMask); //set analysisMask in deadChannelsManager
 	}
