@@ -8,13 +8,13 @@ DeadChannelsManager::DeadChannelsManager() {
 	analysisMaskPresent = false;
 }
 
-DeadChannelsManager::DeadChannelsManager(edm::ESHandle<AnalysisMask> _analysisMask) {
+DeadChannelsManager::DeadChannelsManager(edm::ESHandle<TotemAnalysisMask> _analysisMask) {
 	analysisMask = _analysisMask;
 	analysisMaskPresent = true;
 }
 
 bool DeadChannelsManager::isChannelDead(RPDetId detectorId, unsigned short stripNumber) {
-	unsigned int symbolicId = TotRPDetId::RawToDecId(detectorId) * 10; //convert to symbolic ID
+	unsigned int symbolicId = TotemRPDetId::RawToDecId(detectorId) * 10; //convert to symbolic ID
 	unsigned int vfat = stripNumber / 128;
 	symbolicId += vfat; //add vfatID to symbolic ID
 	stripNumber = stripNumber - vfat * 128; //convert strip number to a number from range <0; 127>
@@ -22,10 +22,10 @@ bool DeadChannelsManager::isChannelDead(RPDetId detectorId, unsigned short strip
 	totemSymbolicId.subSystem = TotemSymbID::RP;
 	totemSymbolicId.symbolicID = symbolicId;
 	if (analysisMaskPresent) {
-		std::map<TotemSymbID, VFATAnalysisMask>::const_iterator vfatIter = analysisMask->analysisMask.find(
+		std::map<TotemSymbID, TotemVFATAnalysisMask>::const_iterator vfatIter = analysisMask->analysisMask.find(
 		        totemSymbolicId);
 		if (vfatIter != analysisMask->analysisMask.end()) {
-			VFATAnalysisMask vfatMask = vfatIter->second;
+			TotemVFATAnalysisMask vfatMask = vfatIter->second;
 			//if channel is dead return true
 			if (vfatMask.fullMask || vfatMask.maskedChannels.find(stripNumber)
 			        != vfatMask.maskedChannels.end()) {
@@ -38,7 +38,7 @@ bool DeadChannelsManager::isChannelDead(RPDetId detectorId, unsigned short strip
 
 void DeadChannelsManager::displayMap() {
 	if (analysisMaskPresent) {
-		std::map<TotemSymbID, VFATAnalysisMask>::const_iterator vfatIter;
+		std::map<TotemSymbID, TotemVFATAnalysisMask>::const_iterator vfatIter;
 		for (vfatIter = analysisMask->analysisMask.begin(); vfatIter != analysisMask->analysisMask.end(); vfatIter++) {
 			std::cout << vfatIter->first.symbolicID << "\n";
 			VFATAnalysisMask am = vfatIter->second;
