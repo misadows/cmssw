@@ -9,6 +9,7 @@
 <use   name="Geometry/TotemRPDetTopology"/>
 <use   name="Geometry/TotemRPGeometryBuilder"/>
 <use   name="clhep"/>
+<use   name="heppdt"/>
 <use   name="Mixing/Base"/>
 <use   name="gsl"/>
 <use   name="boost"/>
