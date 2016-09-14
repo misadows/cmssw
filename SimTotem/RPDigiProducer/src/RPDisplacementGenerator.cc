@@ -5,7 +5,7 @@
 #include "FWCore/Framework/interface/ESHandle.h"
 #include "Geometry/Records/interface/VeryForwardMisalignedGeometryRecord.h"
 #include "Geometry/Records/interface/VeryForwardRealGeometryRecord.h"
-#include "Geometry/TotemRPGeometryBuilder/interface/TotemRPGeometry.h"
+#include "Geometry/VeryForwardGeometryBuilder/interface/TotemRPGeometry.h"
 #include "TotemAlignment/RPDataFormats/interface/RPAlignmentCorrections.h"
 
 #include "SimTotem/RPDigiProducer/interface/RPDisplacementGenerator.h"
