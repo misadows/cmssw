@@ -4,7 +4,7 @@
 #include "FWCore/ParameterSet/interface/ParameterSet.h"
 #include <vector>
 #include "SimTotem/RPDigiProducer/interface/RPSimTypes.h"
-#include "Geometry/TotemRPDetTopology/interface/RPSimTopology.h"
+#include "Geometry/VeryForwardRPTopology/interface/RPSimTopology.h"
 
 class RPLinearInduceChargeOnStrips
 {
