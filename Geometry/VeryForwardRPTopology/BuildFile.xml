@@ -7,6 +7,8 @@
 <use   name="boost"/>
 <use   name="hepmc"/>
 <use   name="heppdt"/>
+<use   name="SimGeneral/HepPDTRecord"/>
+
 
 <export>
   <lib   name="1"/>
