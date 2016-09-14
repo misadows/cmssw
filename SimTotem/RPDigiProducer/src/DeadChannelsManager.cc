@@ -14,7 +14,7 @@ DeadChannelsManager::DeadChannelsManager(edm::ESHandle<TotemAnalysisMask> _analy
 }
 
 bool DeadChannelsManager::isChannelDead(RPDetId detectorId, unsigned short stripNumber) {
-	unsigned int symbolicId = TotemRPDetId::RawToDecId(detectorId) * 10; //convert to symbolic ID
+	unsigned int symbolicId = TotemRPDetId::rawToDecId(detectorId) * 10; //convert to symbolic ID
 	unsigned int vfat = stripNumber / 128;
 	symbolicId += vfat; //add vfatID to symbolic ID
 	stripNumber = stripNumber - vfat * 128; //convert strip number to a number from range <0; 127>
@@ -41,7 +41,7 @@ void DeadChannelsManager::displayMap() {
 		std::map<TotemSymbID, TotemVFATAnalysisMask>::const_iterator vfatIter;
 		for (vfatIter = analysisMask->analysisMask.begin(); vfatIter != analysisMask->analysisMask.end(); vfatIter++) {
 			std::cout << vfatIter->first.symbolicID << "\n";
-			VFATAnalysisMask am = vfatIter->second;
+			TotemVFATAnalysisMask am = vfatIter->second;
 			if (am.fullMask) {
 				std::cout << "   full mask\n";
 			} else {
