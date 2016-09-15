@@ -104,7 +104,7 @@ void RPDigiProducer::produce(edm::Event& iEvent, const edm::EventSetup& iSetup) 
 	// Step A: Get Inputs
 	edm::Handle<CrossingFrame<PSimHit> > cf;
 //	iEvent.getByToken(tokenCrossingFrameTotemRP, cf);
-	iEvent.getByLabel("", "g4SimHitsTotemHitsRP", cf);
+	iEvent.getByLabel("g4SimHits", "g4SimHitsTotemHitsRP", cf);
 
 	if (verbosity_) {
 		std::cout << "\n\n=================== Starting SimHit access" << "  ===================" << std::endl;
