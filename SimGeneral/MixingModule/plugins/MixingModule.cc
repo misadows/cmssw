@@ -34,7 +34,6 @@
 #include "SimGeneral/MixingModule/interface/DigiAccumulatorMixModFactory.h"
 #include "SimGeneral/MixingModule/interface/PileUpEventPrincipal.h"
 #include "DataFormats/Common/interface/ValueMap.h"
-#include <iostream>
 
 namespace edm {
 
