@@ -6,8 +6,8 @@
 <use   name="DataFormats/Common"/>
 <use   name="SimDataFormats/CrossingFrame"/>
 <use   name="SimTracker/Common"/>
-<use   name="Geometry/TotemRPDetTopology"/>
-<use   name="Geometry/TotemRPGeometryBuilder"/>
+<use   name="Geometry/VeryForwardRPTopology"/>
+<use   name="Geometry/VeryForwardGeometryBuilder"/>
 <use   name="clhep"/>
 <use   name="heppdt"/>
 <use   name="Mixing/Base"/>
