@@ -6,7 +6,7 @@
 #include "Geometry/Records/interface/VeryForwardMisalignedGeometryRecord.h"
 #include "Geometry/Records/interface/VeryForwardRealGeometryRecord.h"
 #include "Geometry/VeryForwardGeometryBuilder/interface/TotemRPGeometry.h"
-#include "TotemAlignment/RPDataFormats/interface/RPAlignmentCorrections.h"
+#include "DataFormats/CTPPSAlignment/interface/RPAlignmentCorrectionsData.h"
 
 #include "SimTotem/RPDigiProducer/interface/RPDisplacementGenerator.h"
 
@@ -21,7 +21,7 @@ RPDisplacementGenerator::RPDisplacementGenerator(const edm::ParameterSet &ps, RP
   isOn = ps.getParameter<bool>("RPDisplacementOn");
 
   // read the alignment correction
-  ESHandle<RPAlignmentCorrections> alignments;
+  ESHandle<RPAlignmentCorrectionsData> alignments;
   try {
     iSetup.get<VeryForwardMisalignedGeometryRecord>().get(alignments);
   }
