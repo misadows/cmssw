@@ -30,6 +30,7 @@
 #include "CLHEP/Random/RandomEngine.h"
 #include "CondFormats/TotemReadoutObjects/interface/TotemAnalysisMask.h"
 #include "CondFormats/DataRecord/interface/TotemDAQMappingRecord.h"
+#include <iostream>
 
 RPDigiProducer::RPDigiProducer(const edm::ParameterSet& conf) :
 	conf_(conf) {
