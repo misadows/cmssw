@@ -7,7 +7,8 @@
 #include "Geometry/Records/interface/VeryForwardRealGeometryRecord.h"
 #include "Geometry/VeryForwardGeometryBuilder/interface/TotemRPGeometry.h"
 #include "DataFormats/CTPPSAlignment/interface/RPAlignmentCorrectionsData.h"
-
+#include <Math/RotationZYX.h>
+#include <Math/Rotation3D.h>
 
 #include "SimTotem/RPDigiProducer/interface/RPDisplacementGenerator.h"
 
@@ -31,13 +32,13 @@ RPDisplacementGenerator::RPDisplacementGenerator(const edm::ParameterSet &ps, RP
 
   unsigned int decId = TotemRPDetId::rawToDecId(detId);
 
-  DDTranslation S_m;        // zero translation by default
-  DDRotationMatrix R_m;     // identity rotation by default
+  math::XYZVectorD S_m;
+  RotationMatrix R_m;
 
   if (alignments.isValid()) {
     const RPAlignmentCorrectionData& ac = alignments->GetFullSensorCorrection(decId);
-    S_m = ac.Translation(); 
-    R_m = ac.RotationMatrix(); 
+    S_m = ac.getTranslation();
+    R_m = ac.getRotationMatrix();
   } else
     isOn = false;
 

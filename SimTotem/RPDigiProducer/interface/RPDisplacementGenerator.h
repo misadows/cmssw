@@ -4,6 +4,7 @@
 #include "DataFormats/TotemRPDataTypes/interface/RPTypes.h"
 #include "DetectorDescription/Base/interface/DDRotationMatrix.h"
 #include "DetectorDescription/Base/interface/DDTranslation.h"
+#include <Math/Rotation3D.h>
 #include <map>
 
 namespace edm {
@@ -27,6 +28,8 @@ class PSimHit;
 class RPDisplacementGenerator
 {
   public:
+    typedef ROOT::Math::Rotation3D RotationMatrix;
+
     RPDisplacementGenerator(const edm::ParameterSet &, RPDetId, const edm::EventSetup &);
   
     /// returns displaced PSimHit
