@@ -187,7 +187,7 @@ namespace edm {
               if(binary_search_all(crossingFrames, tag.instance())) {
                 workersObjects_.push_back(new MixingWorker<PSimHit>(minBunch_,maxBunch_,bunchSpace_,subdets[ii],label,labelCF,maxNbSources_,tag,tagCF));
 
-                std::cout<<"!!!!!!!!!!!!!!!!!!!!Label " <label<<"\n\n";
+                std::cout<<"!!!!!!!!!!!!!!!!!!!!Label " <<label<<"\n\n";
                 produces<CrossingFrame<PSimHit> >(label);
                 consumes<std::vector<PSimHit> >(tag);
               }
