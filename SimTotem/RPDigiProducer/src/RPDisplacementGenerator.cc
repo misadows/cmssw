@@ -8,6 +8,7 @@
 #include "Geometry/VeryForwardGeometryBuilder/interface/TotemRPGeometry.h"
 #include "DataFormats/CTPPSAlignment/interface/RPAlignmentCorrectionsData.h"
 
+
 #include "SimTotem/RPDigiProducer/interface/RPDisplacementGenerator.h"
 
 using namespace std;
@@ -34,7 +35,7 @@ RPDisplacementGenerator::RPDisplacementGenerator(const edm::ParameterSet &ps, RP
   DDRotationMatrix R_m;     // identity rotation by default
 
   if (alignments.isValid()) {
-    const RPAlignmentCorrection& ac = alignments->GetFullSensorCorrection(decId);
+    const RPAlignmentCorrectionData& ac = alignments->GetFullSensorCorrection(decId);
     S_m = ac.Translation(); 
     R_m = ac.RotationMatrix(); 
   } else
@@ -42,7 +43,7 @@ RPDisplacementGenerator::RPDisplacementGenerator(const edm::ParameterSet &ps, RP
 
   // transform shift and rotation to the local coordinate frame
   ESHandle<TotemRPGeometry> geom;
-  iSetup.get<RealGeometryRecord>().get(geom);
+  iSetup.get<VeryForwardRealGeometryRecord>().get(geom);
   DetGeomDesc *g = geom->GetDetector(detId);
 
   //const DDTranslation& S_l = g->translation();
