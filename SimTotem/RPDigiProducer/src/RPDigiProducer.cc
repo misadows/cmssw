@@ -49,7 +49,6 @@ RPDigiProducer::RPDigiProducer(const edm::ParameterSet& conf) :
 
 	// register data to consume
 	tokenCrossingFrameTotemRP = consumes<CrossingFrame<PSimHit>>(edm::InputTag("mix","g4SimHitsTotemHitsRP", ""));
-	std::cout<<"CONSUMES\n\n";
 
 	RP_hit_containers_.clear();
 	RP_hit_containers_ = conf.getParameter<std::vector<std::string> > ("ROUList");
