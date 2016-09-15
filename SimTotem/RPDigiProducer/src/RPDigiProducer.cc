@@ -48,7 +48,7 @@ RPDigiProducer::RPDigiProducer(const edm::ParameterSet& conf) :
 	produces<edm::DetSetVector<RPDetTrigger> > ();
 
 	// register data to consume
-	tokenCrossingFrameTotemRP = consumes<CrossingFrame<PSimHit>>(edm::InputTag("mix"));
+	tokenCrossingFrameTotemRP = consumes<CrossingFrame<PSimHit>>(edm::InputTag("mix","g4SimHitsTotemHitsRP", ""));
 	std::cout<<"CONSUMES\n\n";
 
 	RP_hit_containers_.clear();
