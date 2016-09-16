@@ -233,7 +233,7 @@ edm::DetSet<TotemRPDigi> RPDigiProducer::convertRPStripDetSet(const edm::DetSet<
 	rpdigi_detset.reserve(rpstrip_detset.size());
 
 	for(std::vector<RPStripDigi>::iterator stripIterator = rpstrip_detset.begin(); stripIterator < rpstrip_detset.end(); ++stripIterator){
-		rpdigi_detset.push_back(TotemRPDigi(stripIterator->getStripNumber()));
+		rpdigi_detset.push_back(TotemRPDigi(stripIterator->GetStripNo()));
 	}
 
 	return rpdigi_detset;
