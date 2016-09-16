@@ -38,6 +38,7 @@
 
 #include "FWCore/ParameterSet/interface/ParameterSet.h"
 #include "DataFormats/TotemRPDataTypes/interface/RPStripDigi.h"
+#include "DataFormats/TotemDigi/interface/TotemRPDigi.h"
 #include "DataFormats/TotemRPDataTypes/interface/RPDetTrigger.h"
 #include "SimTotem/RPDigiProducer/interface/RPSimTypes.h"
 
@@ -65,9 +66,11 @@ class RPDigiProducer : public edm::EDProducer {
    private:
       virtual void beginRun(edm::Run&, edm::EventSetup const&);
       virtual void produce(edm::Event&, const edm::EventSetup&);
-      virtual void endJob() ;
-      
-      // ----------member data ---------------------------
+      virtual void endJob();
+
+      edm::DetSet<TotemRPDigi> convertRPStripDetSet(const edm::DetSet<RPStripDigi>&);
+
+    // ----------member data ---------------------------
       std::vector<std::string> RP_hit_containers_;
       typedef std::map<unsigned int, std::vector<PSimHit> > simhit_map;
       typedef simhit_map::iterator simhit_map_iterator;
@@ -75,7 +78,7 @@ class RPDigiProducer : public edm::EDProducer {
       
       edm::ParameterSet conf_;
       std::map<RPDetId, boost::shared_ptr<RPDetDigitizer> > theAlgoMap;
-      std::vector<edm::DetSet<RPStripDigi> > theDigiVector;
+      std::vector<edm::DetSet<TotemRPDigi> > theDigiVector;
       std::vector<edm::DetSet<RPDetTrigger> > theTriggerVector;
 
       CLHEP::HepRandomEngine* rndEngine = nullptr;

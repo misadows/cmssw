@@ -20,6 +20,7 @@
 
 #include "DataFormats/TotemRPDataTypes/interface/RPStripDigi.h"
 #include "DataFormats/TotemRPDataTypes/interface/RPDetTrigger.h"
+#include "DataFormats/TotemDigi/interface/TotemRPDigi.h"
 #include "DataFormats/Common/interface/DetSetVector.h"
 #include "DataFormats/TotemRPDetId/interface/TotemRPDetId.h"
 
@@ -44,7 +45,7 @@ RPDigiProducer::RPDigiProducer(const edm::ParameterSet& conf) :
 	//now do what ever other initialization is needed
 	//  std::string strip_digi_label ( conf.getParameter<std::string>("StripDigiLabel") );
 	//  std::string strip_trigger_label ( conf.getParameter<std::string>("StripTriggerLabel") );
-	produces<edm::DetSetVector<RPStripDigi> > ();
+	produces<edm::DetSetVector<TotemRPDigi> > ();
 	produces<edm::DetSetVector<RPDetTrigger> > ();
 
 	// register data to consume
@@ -191,7 +192,7 @@ void RPDigiProducer::produce(edm::Event& iEvent, const edm::EventSetup& iSetup) 
 		}
 
 		if (digi_collector.data.size() > 0) {
-			theDigiVector.push_back(digi_collector);
+			theDigiVector.push_back(convertRPStripDetSet(digi_collector));
 		}
 		if (trigger_collector.data.size() > 0) {
 			theTriggerVector.push_back(trigger_collector);
@@ -199,8 +200,8 @@ void RPDigiProducer::produce(edm::Event& iEvent, const edm::EventSetup& iSetup) 
 	}
 
 	// Step C: create empty output collection
-	std::auto_ptr<edm::DetSetVector<RPStripDigi> > digi_output(
-	        new edm::DetSetVector<RPStripDigi>(theDigiVector));
+	std::auto_ptr<edm::DetSetVector<TotemRPDigi> > digi_output(
+	        new edm::DetSetVector<TotemRPDigi>(theDigiVector));
 	std::auto_ptr<edm::DetSetVector<RPDetTrigger> > trigger_output(
 	        new edm::DetSetVector<RPDetTrigger>(theTriggerVector));
 
@@ -225,6 +226,17 @@ void RPDigiProducer::beginRun(edm::Run&, edm::EventSetup const& es){
 
 // ------------ method called once each job just after ending the event loop  ------------
 void RPDigiProducer::endJob() {
+}
+
+edm::DetSet<TotemRPDigi> RPDigiProducer::convertRPStripDetSet(const edm::DetSet<RPStripDigi>& rpstrip_detset){
+	edm::DetSet<TotemRPDigi> rpdigi_detset(rpstrip_detset.detId());
+	rpdigi_detset.reserve(rpstrip_detset.size());
+
+	for(std::vector<RPStripDigi>::iterator stripIterator = rpstrip_detset.begin(); stripIterator < rpstrip_detset.end(); ++stripIterator){
+		rpdigi_detset.push_back(TotemRPDigi(stripIterator->getStripNumber()));
+	}
+
+	return rpdigi_detset;
 }
 
 DEFINE_FWK_MODULE( RPDigiProducer);
