@@ -4,6 +4,7 @@
 
 #include "IOMC/EventVertexGenerators/interface/BaseEvtVtxGenerator.h"
 #include "IOMC/EventVertexGenerators/interface/GaussEvtVtxGenerator.h"
+#include "IOMC/EventVertexGenerators/interface/GaussEvtVtxEnergyGenerator.h"
 #include "IOMC/EventVertexGenerators/interface/FlatEvtVtxGenerator.h"
 #include "IOMC/EventVertexGenerators/interface/BeamProfileVtxGenerator.h"
 #include "IOMC/EventVertexGenerators/interface/BetafuncEvtVtxGenerator.h"
