@@ -18,6 +18,7 @@
 //using edm::VertexGenerator;
 //DEFINE_FWK_MODULE(VertexGenerator) ;
 DEFINE_FWK_MODULE(GaussEvtVtxGenerator) ;
+DEFINE_FWK_MODULE(GaussEvtVtxEnergyGenerator) ;
 DEFINE_FWK_MODULE(FlatEvtVtxGenerator) ;
 DEFINE_FWK_MODULE(BeamProfileVtxGenerator) ;
 DEFINE_FWK_MODULE(BetafuncEvtVtxGenerator) ;
