@@ -1,6 +1,6 @@
 #include "SimTotem/RPDigiProducer/interface/DeadChannelsManager.h"
-#include "CondFormats/TotemReadoutObjects/interface/TotemSymbId.h"
-#include "CondFormats/TotemReadoutObjects/interface/TotemDAQMapping.h"
+#include "CondFormats/CTPPSReadoutObjects/interface/TotemSymbId.h"
+#include "CondFormats/CTPPSReadoutObjects/interface/TotemDAQMapping.h"
 #include "DataFormats/CTPPSDetId/interface/TotemRPDetId.h"
 #include <map>
 

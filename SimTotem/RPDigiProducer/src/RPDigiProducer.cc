@@ -20,7 +20,7 @@
 
 #include "DataFormats/TotemRPDataTypes/interface/RPStripDigi.h"
 #include "DataFormats/TotemRPDataTypes/interface/RPDetTrigger.h"
-#include "DataFormats/TotemDigi/interface/TotemRPDigi.h"
+#include "DataFormats/CTPPSDigi/interface/TotemRPDigi.h"
 #include "DataFormats/Common/interface/DetSetVector.h"
 #include "DataFormats/CTPPSDetId/interface/TotemRPDetId.h"
 
@@ -29,7 +29,7 @@
 #include "FWCore/Utilities/interface/RandomNumberGenerator.h"
 #include "FWCore/Utilities/interface/Exception.h"
 #include "CLHEP/Random/RandomEngine.h"
-#include "CondFormats/TotemReadoutObjects/interface/TotemAnalysisMask.h"
+#include "CondFormats/CTPPSReadoutObjects/interface/TotemAnalysisMask.h"
 #include "CondFormats/DataRecord/interface/TotemDAQMappingRecord.h"
 #include <iostream>
 
