@@ -17,7 +17,7 @@
 #include "SimG4CMS/TotemRP/interface/Totem_RP_G4HitCollection.h"
 
 //#include "SimG4CMS/TotemRP/interface/RPDebugEvent.h"
-#include "DataFormats/TotemRPDetId/interface/TotemRPDetId.h"
+#include "DataFormats/CTPPSDetId/interface/TotemRPDetId.h"
 
 #include "FWCore/Framework/interface/EventSetup.h"
 #include "FWCore/Framework/interface/ESHandle.h"
