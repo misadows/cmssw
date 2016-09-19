@@ -22,7 +22,7 @@
 #include "DataFormats/TotemRPDataTypes/interface/RPDetTrigger.h"
 #include "DataFormats/TotemDigi/interface/TotemRPDigi.h"
 #include "DataFormats/Common/interface/DetSetVector.h"
-#include "DataFormats/TotemRPDetId/interface/TotemRPDetId.h"
+#include "DataFormats/CTPPSDetId/interface/TotemRPDetId.h"
 
 //Random Number
 #include "FWCore/ServiceRegistry/interface/Service.h"
