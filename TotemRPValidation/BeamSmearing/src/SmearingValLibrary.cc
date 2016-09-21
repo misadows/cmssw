@@ -32,9 +32,6 @@
 #include "FWCore/Framework/interface/EventSetup.h"
 #include "HepMC/GenEvent.h"
 
-#include "CLHEP/Random/RandGaussQ.h"
-#include "CLHEP/Units/GlobalSystemOfUnits.h"
-#include "CLHEP/Units/GlobalPhysicalConstants.h"
 #include "HepMC/SimpleVector.h"
 #include "FWCore/Framework/interface/Event.h"
 #include "FWCore/ParameterSet/interface/ParameterSet.h"
