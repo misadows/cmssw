@@ -43,6 +43,7 @@ SmearingValLibrary::SmearingValLibrary(const edm::ParameterSet& conf) :
   outputFile(conf.getParameter<std::string>("outputFile")),
   thetaLim(conf.getParameter<double>("thetaLimit"))
 {
+consumes<edm::HepMCProduct>(generatorLabel);
 }
 
 //----------------------------------------------------------------------------------------------------
