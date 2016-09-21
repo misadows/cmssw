@@ -26,6 +26,11 @@
 
 #include "TSystem.h"
 
+
+#include "FWCore/Framework/interface/EventSetup.h"
+#include "HepMC/GenEvent.h"
+#include "FWCore/Framework/interface/Event.h"
+
 #include "TotemRPValidation/BeamSmearing/interface/SmearingValLibrary.h"
 
 using namespace std;
