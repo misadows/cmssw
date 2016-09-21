@@ -47,7 +47,6 @@ class SmearingValLibrary
   void finalize();
   void writeHistogramsToFile();
 
- private:
   static const char* regionNames[];
 
   unsigned char verbosity;
