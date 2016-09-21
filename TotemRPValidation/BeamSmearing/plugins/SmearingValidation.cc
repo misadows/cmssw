@@ -19,6 +19,8 @@
 
 #include "FWCore/Framework/interface/EDAnalyzer.h"
 #include "TotemRPValidation/BeamSmearing/interface/SmearingValLibrary.h"
+#include "TotemRPValidation/BeamSmearing/interface/SmearingValLibrary.h"
+#include "SimDataFormats/GeneratorProducts/interface/HepMCProduct.h"
 
 //----------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------------------
@@ -49,7 +51,7 @@ class SmearingValidation : public edm::EDAnalyzer
 SmearingValidation::SmearingValidation(const edm::ParameterSet& conf)
 {
   library = std::auto_ptr<SmearingValLibrary>(new SmearingValLibrary(conf));
-  consumes<edm::HepMCProduct>(library->generatorLabel);
+  consumes<edm::HepMCProduct>("SmearingGenerator");
 
 }
 
