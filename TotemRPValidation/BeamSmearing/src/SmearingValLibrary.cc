@@ -25,7 +25,35 @@
 #include "TF1.h"
 
 #include "TSystem.h"
+#include "IOMC/EventVertexGenerators/interface/GaussEvtVtxEnergyGenerator.h"
 
+#include "FWCore/Utilities/interface/Exception.h"
+#include "FWCore/ParameterSet/interface/ParameterSet.h"
+#include "FWCore/Framework/interface/EventSetup.h"
+#include "HepMC/GenEvent.h"
+
+#include "CLHEP/Random/RandGaussQ.h"
+#include "CLHEP/Units/GlobalSystemOfUnits.h"
+#include "CLHEP/Units/GlobalPhysicalConstants.h"
+#include "HepMC/SimpleVector.h"
+#include "FWCore/Framework/interface/Event.h"
+#include "FWCore/ParameterSet/interface/ParameterSet.h"
+#include "FWCore/Framework/interface/ESHandle.h"
+#include "FWCore/ServiceRegistry/interface/Service.h"
+
+#include "SimDataFormats/GeneratorProducts/interface/HepMCProduct.h"
+#include "SimDataFormats/GeneratorProducts/interface/HepMCProduct.h"
+
+#include "FWCore/Utilities/interface/RandomNumberGenerator.h"
+#include "TLorentzVector.h"
+
+#include "FWCore/Utilities/interface/Exception.h"
+
+#include "DataFormats/Provenance/interface/Provenance.h"
+#include "FWCore/Utilities/interface/EDMException.h"
+#include "HepMC/GenEvent.h"
+#include "TotemCondFormats/BeamOpticsParamsObjects/interface/BeamOpticsParams.h"
+#include "TotemCondFormats/DataRecord/interface/BeamOpticsParamsRcd.h"
 
 #include "FWCore/Framework/interface/EventSetup.h"
 #include "HepMC/GenEvent.h"
