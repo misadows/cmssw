@@ -51,7 +51,7 @@ class SmearingValidation : public edm::EDAnalyzer
 SmearingValidation::SmearingValidation(const edm::ParameterSet& conf)
 {
   library = std::auto_ptr<SmearingValLibrary>(new SmearingValLibrary(conf));
-  consumes<edm::HepMCProduct>("SmearingGenerator");
+  consumes<edm::HepMCProduct>(std::string("SmearingGenerator"));
 
 }
 
